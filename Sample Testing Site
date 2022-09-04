@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Testing Site</title>
+
+<script type="text/javascript">
+
+function checkNuminFname(){
+let a = document.getElementById("fname");
+if(!(isNaN(a.value))){
+alert("Numeric Values not allowed in Frist Name!");
+a.value="";
+}
+}
+function checkNuminLname(){
+let a = document.getElementById("lname");
+if(!(isNaN(a.value))){
+alert("Numeric Values not allowed in Last Name!");
+a.value="";
+}
+}
+
+function submitFunction() {
+var txt;
+if (confirm("Are you sure you want to submit details?")) {
+alert("Thanks! Your details got submitted.");
+} 
+
+}
+</script>
+
+
+</head>
+<body>
+<form action="#">
+	<fieldset>
+	<legend>Personal Details</legend>
+	
+
+<p>
+		<label>
+		Salutation
+		<br />
+		<select name="salutation">
+			<option>--None--</option>
+			<option>Mr.</option>
+			<option>Ms.</option>
+			<option>Mrs.</option>
+			<option>Dr.</option>
+			<option>Prof.</option>
+		</select>
+		</label>
+	</p>
+
+
+	
+
+<p>
+		<label>First name: <input required="required" id="fname" name="firstName" onchange="checkNuminFname();"/></label>
+	</p>
+
+
+	
+
+<p>
+		<label>Last name: <input required="required" id="lname" name="lastName" onchange="checkNuminLname();"/></label>
+	</p>
+
+
+	
+
+<p>
+		Gender :
+		<label><input required="required" type="radio" name="gender" value="male" /> Male</label>
+		<label><input required="required" type="radio" name="gender" value="female" /> Female</label>
+	</p>
+
+
+	
+
+<p>
+		<label>Email:<input required="required" id="email" type="email" name="email" /></label>
+	</p>
+
+
+	
+
+<p>
+		<label>Date of Birth:<input required="required" id="birthdate" type="date" name="birthDate"></label>
+	</p>
+
+
+	
+
+<p>
+		<label>
+		Address :
+		<br />
+		<textarea id="address" name="address" cols="30" rows="3"></textarea>
+		</label>
+	</p>
+
+
+	
+
+<p>
+		<button id="submitBtn" type="submit" onclick="submitFunction();">Submit</button>
+	</p>
+
+
+	</fieldset>
+</form>
+</body>
+</html>
